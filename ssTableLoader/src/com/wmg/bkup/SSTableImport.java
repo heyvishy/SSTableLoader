@@ -1,4 +1,4 @@
-package com.wmg;
+package com.wmg.bkup;
 
 import static org.apache.cassandra.utils.ByteBufferUtil.bytes;
 

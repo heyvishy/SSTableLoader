@@ -63,7 +63,7 @@ public class GZSSTableImport
                 directory,partitioner,keyspaceName,columFamilyName,UTF8Type.instance,null,64);
      
         int lineNumber = 1;
-        CsvEntry entry = new CsvEntry();
+        TsvEntry entry = new TsvEntry();
         long timestamp = System.currentTimeMillis() * 1000;
   
 		 while ((strLine = br.readLine()) != null)   {
@@ -116,14 +116,13 @@ public class GZSSTableImport
 		}
     }
 
-    static class CsvEntry
+    static class TsvEntry
     {
         String key;
         String value;
   
         boolean parse(String line, int lineNumber)
         {
-            // Ghetto csv parsing
             String[] columns = line.split("\\t");
             if (columns.length != 2)
             {
